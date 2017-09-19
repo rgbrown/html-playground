@@ -56,12 +56,13 @@
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         drawPoints();
 
+        var dt = 0.001;
+
         for (i = 0; i < nPoints; i++){
-            p = points[i];
+            var p = points[i];
             var du = fhn([p.v, p.w]);
-            dv = du[0];
-            dw = du[1];
-            var dt = 0.001;
+            var dv = du[0];
+            var dw = du[1];
             p.v += dv*dt;
             p.w += dw*dt;
         }
